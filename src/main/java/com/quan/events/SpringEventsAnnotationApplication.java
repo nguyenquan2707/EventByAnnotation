@@ -19,6 +19,8 @@ public class SpringEventsAnnotationApplication {
 		ZeeCafePublisher publisher = context.getBean(ZeeCafePublisher.class);
 		publisher.streamBingBangTheory("EP - 004");
 
+		publisher.streamComedyCircus("EP - 005");
+
 
 
 

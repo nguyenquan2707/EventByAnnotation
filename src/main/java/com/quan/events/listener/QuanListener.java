@@ -1,6 +1,7 @@
 package com.quan.events.listener;
 
 
+import com.quan.events.event.ComedyCircusEvent;
 import com.quan.events.event.TheBigBangTheoryEvent;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
