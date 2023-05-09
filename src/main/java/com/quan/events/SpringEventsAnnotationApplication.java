@@ -1,31 +1,25 @@
 package com.quan.events;
 
-import com.quan.events.config.AppConfig;
-import com.quan.events.publisher.ZeeCafePublisher;
+import com.quan.events.publisher.Gpay;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-//@SpringBootApplication
-public class SpringEventsAnnotationApplication {
+@SpringBootApplication
+public class SpringEventsAnnotationApplication implements CommandLineRunner {
 
+	@Autowired
+	private Gpay gpay;
 
 	public static void main(String[] args) {
-//		SpringApplication.run(SpringEventsAnnotationApplication.class, args);
-
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		ZeeCafePublisher publisher = context.getBean(ZeeCafePublisher.class);
-		publisher.streamBingBangTheory("EP - 004");
-
-		publisher.streamComedyCircus("EP - 005");
-
-
-
-
-
+		SpringApplication.run(SpringEventsAnnotationApplication.class, args);
 
 	}
 
+	@Override
+	public void run(String... args) throws Exception {
+		gpay.sendMoney("Quan", 10, true);
+
+	}
 }
