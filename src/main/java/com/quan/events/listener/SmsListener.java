@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class SmsListener {
 
     @EventListener
-    @Order(1)
+//    @Order(1)
     public void listenOnTransactionFail(TransactionFailuerEvent event) {
         System.out.println("Hi " + event.getName() + " transaction fail with amount = " + event.getAmount() + " by sms");
     }
