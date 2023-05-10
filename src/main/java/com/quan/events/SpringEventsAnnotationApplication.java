@@ -16,9 +16,6 @@ public class SpringEventsAnnotationApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication
 				.run(SpringEventsAnnotationApplication.class, args);
-		applicationContext.start();
-		applicationContext.close();
-		applicationContext.stop();
 	}
 
 	@Override

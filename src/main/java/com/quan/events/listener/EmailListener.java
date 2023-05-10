@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 public class EmailListener {
 
     @EventListener
-    public void listenOnTransactionFail(TransactionFailuerEvent event) {
+    public void listenOnTransactionFail(TransactionFailuerEvent event) throws InterruptedException {
+
+        Thread.sleep(4000);
         System.out.println("Hi " + event.getName() + " transaction fail with amount = " + event.getAmount() + " by email");
     }
 }

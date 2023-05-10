@@ -1,7 +1,6 @@
 package com.quan.events.publisher;
 
 import com.quan.events.event.TransactionFailuerEvent;
-import com.quan.events.event.TransactionFailuerEvent2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
@@ -23,7 +22,6 @@ public class Gpay {
         }
         catch (Exception e) {
             eventPublisher.publishEvent(new TransactionFailuerEvent(name, amount));
-            eventPublisher.publishEvent(new TransactionFailuerEvent2(name, amount));
             e.printStackTrace();
         }
     }
