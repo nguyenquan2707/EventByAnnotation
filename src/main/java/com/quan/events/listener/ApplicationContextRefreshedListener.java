@@ -1,9 +1,6 @@
 package com.quan.events.listener;
 
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.ContextStartedEvent;
-import org.springframework.context.event.ContextStoppedEvent;
-import org.springframework.context.event.EventListener;
+import org.springframework.context.event.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,5 +22,10 @@ public class ApplicationContextRefreshedListener {
     @EventListener
     public void handleContextStopEvent(ContextStoppedEvent event) {
         System.out.println("Application Stop....." + event);
+    }
+
+    @EventListener
+     public void handleContextClosedEvent(ContextClosedEvent event) {
+        System.out.println("Application Close....." + event);
     }
 }
