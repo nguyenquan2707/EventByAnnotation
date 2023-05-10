@@ -14,11 +14,8 @@ public class SpringEventsAnnotationApplication implements CommandLineRunner {
 	private Gpay gpay;
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext applicationContext = SpringApplication
+		 ConfigurableApplicationContext applicationContext = SpringApplication
 				.run(SpringEventsAnnotationApplication.class, args);
-		applicationContext.start();
-		applicationContext.close();
-		applicationContext.stop();
 	}
 
 	@Override
